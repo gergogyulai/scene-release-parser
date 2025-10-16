@@ -6,7 +6,7 @@ import assert from 'assert'
  * This are hand selected, at some point 'more complex' releases that need to pass the test.
  *
  * @author Wellington Estevo
- * @version 1.5.1
+ * @version 1.5.2
  */
 
 describe( 'ReleaseParser', function()
@@ -602,6 +602,14 @@ describe( 'ReleaseParser', function()
 		)
 	})
 
+	it( 'Music #14 - Falsely parsing Pal as resolution', () =>
+	{
+		assert.equal(
+			ReleaseParser( 'Your_Pal_Bill-Plight_Of_The_Living_Dead-WEB-2017-SDRL', 'mp3' ).toString(),
+			'Artist: Your Pal Bill / Title: Plight Of The Living Dead / Group: SDRL / Year: 2017 / Source: WEB / Type: Music'
+		)
+	})
+
 	// EBook
 	it( 'Ebook #1 - Basic with title and title extra', () =>
 	{
@@ -754,6 +762,14 @@ describe( 'ReleaseParser', function()
 		assert.equal(
 			ReleaseParser( 'Lustery.E727.Leo.And.Madly.A.Happy.Ending.For.Him.XXX.VERTICAL.HRp.MP4-WRB', 'XXX' ).toString(),
 			'Publisher: Lustery / Title: Leo And Madly A Happy Ending For Him / Group: WRB / Episode: 727 / Flags: HR, Vertical, XXX / Format: MP4 / Type: XXX'
+		)
+	})
+
+	it ( 'XXX #3 - Falsely parsing Ost as musicvideo', () =>
+	{
+		assert.equal(
+			ReleaseParser( 'ClubSweethearts.24.12.25.Amelia.Ost.Sunny.May.And.Kitty.Doll88.Hardcore.XXX.2160p.MP4-VSEX', 'XXX' ).toString(),
+			'Publisher: ClubSweethearts / Title: Amelia Ost Sunny May And Kitty Doll88 Hardcore / Group: VSEX / Year: 2024 / Date: 25.12.2024 / Flags: XXX / Format: MP4 / Resolution: 2160p / Type: XXX'
 		)
 	})
 

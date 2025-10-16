@@ -4,7 +4,7 @@ import patterns from './ReleasePatterns.js'
  * ReleaseParser - A library for parsing scene release names.
  *
  * @author Wellington Estevo
- * @version 1.5.1
+ * @version 1.5.2
  *
  * @module ReleaseParser
  * @param {string} releaseName - Original release name.
@@ -1541,10 +1541,14 @@ const ReleaseParser = /** @lends module:ReleaseParser */ ( releaseName, section 
 			{
 				// Regex flag = case Insensitive
 				let flags = 'i'
+				// Case sensitive flags/attributes
 				// The 'iT' source for iTunes needs to be case sensitive,
-				// so italian language + it as word doesn't get parsed as source = itunes
-				if ( type === 'source' && pattern === 'iT' )
-					flags = ''
+				// so italian language + it as word doesn't get parsed as source = itune
+				const caseSensitive = [ 'PAL', 'OST', 'DAT Tape', 'iT' ];
+				if (
+					caseSensitive.includes( attrKey ) ||
+					caseSensitive.includes( pattern )
+				) flags = '';
 
 				// Some special flags
 				if ( type === 'flags' )
