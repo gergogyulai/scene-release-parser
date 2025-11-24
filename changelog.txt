@@ -1,3 +1,7 @@
+version 1.5.3
+- Fixed:
+	- Unhandled undefined var
+
 version 1.5.2 ( updated 16.10.2025 )
 - Added:
 	- More test cases

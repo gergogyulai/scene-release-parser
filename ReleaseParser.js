@@ -4,7 +4,7 @@ import patterns from './ReleasePatterns.js'
  * ReleaseParser - A library for parsing scene release names.
  *
  * @author Wellington Estevo
- * @version 1.5.2
+ * @version 1.5.3
  *
  * @module ReleaseParser
  * @param {string} releaseName - Original release name.
@@ -1203,7 +1203,7 @@ const ReleaseParser = /** @lends module:ReleaseParser */ ( releaseName, section 
 				// The regex is 'too' ungreedy.
 				// Title extra would only be the second episode number
 				// and it isn't always numeric: 8 / e8 / e08
-				if ( titleExtra.replaceAll( /[a-z]+/gi, '' ).isNumeric() )
+				if ( titleExtra && titleExtra.replaceAll( /[a-z]+/gi, '' ).isNumeric() )
 				{
 					if (
 						titleExtra.length <= 3 &&
