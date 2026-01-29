@@ -786,8 +786,8 @@ const ReleaseParser = /** @lends module:ReleaseParser */ ( releaseName, section 
 		let type = guessTypeByParsedAttributes()
 		// 2nd: no type found? guess by section
 		type = !type ? guessTypeBySection( section ) : type
-		// 3rd: set parsed type or default to Movie
-		type = !type ? 'Movie' : type
+		// 3rd: set parsed type or default to Unknown
+		type = !type ? 'Unknown' : type
 
 		set( 'type', type )
 	}

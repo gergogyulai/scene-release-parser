@@ -468,6 +468,7 @@ const patterns =
 	// Release flags patterns
 	FLAGS : {
 		'3D': '3D',
+		'Ai upscale': 'Ai[._-]?upscaled?',
 		'Abridged': [ 'ABRIDGED', 'gekuerzte?(?:.(?:fassung|lesung))' ], // Audiobook
 		'Addon': 'ADDON', // software
 		'Anime': 'ANiME',
@@ -751,14 +752,14 @@ const patterns =
 
 
 	// Flags for identifying release type ( guessTypeByParsedAttributes )
-	flagsMovie : [ 'Dubbed', 'AC3 Dubbed', 'HDR', 'HDR10', 'HDR10+', 'IMAX', 'Line dubbed', 'Micro dubbed', 'THEATRICAL', 'UNCUT', 'Remux', 'Subbed', 'Directors Cut' ],
+	flagsMovie : [ 'Ai upscale', 'Dubbed', 'AC3 Dubbed', 'HDR', 'HDR10', 'HDR10+', 'IMAX', 'Line dubbed', 'Micro dubbed', 'THEATRICAL', 'UNCUT', 'Remux', 'Subbed', 'Directors Cut' ],
 	flagsEbook : [ 'Magazine', 'Comic', 'ePUB' ],
 	flagsMusic : [ 'CPOP', 'OST' ],
 	flagsApps : [ 'CRACKED', 'REGGED', 'KEYGEN', 'Incl. Patch', 'CRACKFIX', 'ISO', 'ARM', 'INTEL', 'x86', 'x64', 'Portable' ],
 	flagsGames : [ 'DLC', 'TRAiNER' ],
 	flagsAnime : [ 'Anime', 'OVA', 'ONA', 'OAD' ],
 	flagsXxx : [ 'XXX', 'JAV', 'Imageset', 'Hentai' ],
-	flagsVideo : [ 'IVTC' ],
+	flagsVideo : [ 'Ai upscale', 'IVTC' ],
 	// Formats
 	formatsVideo : [ 'AVC', 'VCD', 'SVCD', 'CVCD', 'XViD', 'DiVX', 'x264', 'x265', 'h264', 'h265', 'HEVC', 'MP4', 'MPEG', 'MPEG2', 'VC1', 'WMV' ],
 	formatsMusic : [ 'FLAC', 'KONTAKT', 'MP3', 'OGG', 'WAV' ],
